@@ -26,6 +26,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "create-react-class": "^15.6.3",
     "html-loader": "^0.5.5",
     "react": "^16.6.1",
     "react-dom": "^16.6.1"
