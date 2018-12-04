@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDom from "react-dom";
-import App from "../src/components/App.js"
-import ClickableImage from "../src/components/ClickableImage.js"
+import App from "../src/components/App.js";
+import ClickableImage from "../src/components/ClickableImage.js";
+import PropTypes from "prop-types";
 
 ReactDom.render(<App />, document.getElementById("root"));
 
@@ -63,3 +64,21 @@ var Timer = createReactClass({
 
 
 ReactDom.render(<Timer initialSeconds={45}/>, document.getElementById("timer"));
+
+const NumbersList = props => (
+    <div>
+        {props.list.map(number => 
+            <div key={number} className={`highlight-${number === props.x}`}>
+            {number}
+            </div>
+            )}
+    </div>
+);
+
+NumbersList.propTypes = {
+        x: PropTypes.number.isRequired
+    };
+
+ReactDom.render(
+    <NumbersList list={[5,2,3,47]} x={3} />, document.getElementById('numbersList')
+);
